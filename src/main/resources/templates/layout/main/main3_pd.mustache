@@ -1,0 +1,94 @@
+<!-- PD추천 / 로그인 맞춤 슬라이더 섹션 -->
+<section id="recommend-slider-container" class="container-fluid py-5" style="font-family: 'Nanum Myeongjo', serif;">
+	<div id="pd-wrapper" class="container-fluid align-items-center">
+	
+		<!-- PD carousel -->
+		<div id="pd-carousel" class="carousel slide" data-bs-ride="carousel">
+		
+			<div class="carousel-inner container w-75 d-flex" id="home" style="height: 400px;">
+				
+				<!-- 슬라이더 영역 -->
+				<div class="carousel-item active">
+					<div class="d-flex">
+						<!-- 좌측 -->
+						<div class="w-25">
+							<span class="fw-bold">부탁해요 프로듀서-</span>
+							<h2 class="fw-bold">PD's Selection</h2>
+							{{^nickname}}
+							<a class="text-decoration-none" href="/loginpage">
+								<span class="fs-5 fw-bold">나만의 맞춤 픽! 지금 로그인 하세요</span>
+							</a>
+							{{/nickname}}
+							{{#nickname}}
+							<span class="fs-5 fw-bold"><b class="text-primary">{{nickname}}</b>님 맞춤 픽!</span>
+							{{/nickname}}
+						</div>
+						<!-- 우측 -->
+						<div class="w-75 mt-5">
+							<div class="container-fluid d-flex">
+								{{#dailyList1}}
+								<div class="position-relative">
+									<a class="stretched-link" href="book/{{ISBN}}">
+							    		<img src="./images/{{ISBN}}.jpg" alt="Los Angeles" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+									</a>
+									<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+										<span class="fw-bold">{{title}}</span><br/>
+										<span class="small fw-bold">{{author}}</span><br/>
+									</div>
+								</div>
+								{{/dailyList1}}
+							</div>
+						</div>
+					</div>
+				</div><!-- carousel-item end -->
+				
+				<div class="carousel-item">
+					<div class="d-flex">
+						<!-- 좌측 -->
+						<div class="w-25">
+							<span class="fw-bold">부탁해요 프로듀서-</span>
+							<h2 class="fw-bold">PD's Selection</h2>
+							{{^nickname}}
+							<a class="text-decoration-none" href="/loginpage">
+								<span class="fs-5 fw-bold">나만의 맞춤 픽! 지금 로그인하세요</span>
+							</a>
+							{{/nickname}}
+							{{#nickname}}
+							<span class="fs-5 fw-bold"><b class="text-primary">{{nickname}}</b>님 맞춤 픽!</span>
+							{{/nickname}}
+						</div>
+						<!-- 우측 -->
+						<div class="w-75 mt-5">
+							<div class="container-fluid d-flex">
+								{{#dailyList2}}
+								<div class="position-relative">
+									<a class="stretched-link" href="book/{{ISBN}}">
+							    		<img src="./images/{{ISBN}}.jpg" alt="Los Angeles" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+									</a>
+									<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+										<span class="fw-bold text-wrap">{{title}}</span><br/>
+										<span class="small fw-bold">{{author}}</span><br/>
+									</div>
+								</div>
+								{{/dailyList2}}
+							</div>
+						</div>
+					</div>
+				</div><!-- carousel-item end -->
+				
+				
+			</div><!-- carousel-inner end -->
+			
+			<!-- 좌우 이동버튼 -->
+			<button class="carousel-control-prev fs-1 text-dark" type="button" data-bs-target="#pd-carousel" data-bs-slide="prev">
+				<i class="bi bi-arrow-left-circle-fill"></i>
+			</button>
+			<button class="carousel-control-next fs-1 text-dark" type="button" data-bs-target="#pd-carousel" data-bs-slide="next">
+				<i class="bi bi-arrow-right-circle-fill"></i>
+			</button>
+			
+		</div><!-- PD carousel end -->
+		
+	</div><!-- wrapper end -->
+</section>
+			

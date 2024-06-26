@@ -1,0 +1,78 @@
+<!-- 요즘 신간 보기 슬라이더 섹션 -->
+<section id="new-slider-container" class="container-fluid py-5" style="font-family: 'Nanum Myeongjo', serif;">
+	<div id="best-wrapper" class="container-fluid">
+		<div class="container w-75">
+			<span class="fw-bold">잉크도 아직 마르지 않은</span>
+			<h2 class="fw-bold">따끈따끈 NEW</h2>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs fw-bold py-3">
+				<li class="nav-item">
+				    <a class="nav-link active" data-bs-toggle="tab" href="#home">신간도서</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- Tab panes -->
+		<div class="tab-content">
+			
+			<!-- new carousel -->
+			<div id="new-carousel" class="carousel slide container-fluid" data-bs-ride="carousel">
+			
+				<div class="carousel-inner container-fluid" id="home" style="height: 400px;">
+				
+					<!-- 슬라이더 영역 -->
+					<div class="carousel-item active">
+						<div class="container">
+							<div class="container-fluid d-flex">
+								{{#newList1}}
+								<div class="container position-relative">
+									<a class="stretched-link" href="book/{{ISBN}}">
+								    	<img src="./images/{{ISBN}}.jpg" alt="신간1" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+									</a>
+									<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+										<span class="fw-bold">{{title}}</span><br/>
+										<span class="small fw-bold">{{author}}</span><br/>
+										<span class="small fw-bold">{{pdate}}</span><br/>
+									</div>
+								</div>
+								{{/newList1}}
+							</div>
+						</div>
+					</div><!-- carousel-item end -->
+					
+					<div class="carousel-item">
+						<div class="container">
+							<div class="container-fluid d-flex">
+								{{#newList2}}
+								<div class="container position-relative">
+									<a class="stretched-link" href="book/{{ISBN}}">
+								    	<img src="./images/{{ISBN}}.jpg" alt="신간2" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+									</a>
+									<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+										<span class="fw-bold">{{title}}</span><br/>
+										<span class="small fw-bold">{{author}}</span><br/>
+										<span class="small fw-bold">{{pdate}}</span><br/>
+									</div>
+								</div>
+								{{/newList2}}
+							</div>
+						</div>
+					</div><!-- carousel-item end -->
+					
+				</div><!-- carousel-inner end -->
+				
+				<!-- 좌우 이동버튼 -->
+				<button class="carousel-control-prev fs-1 text-dark" type="button" data-bs-target="#new-carousel" data-bs-slide="prev">
+					<i class="bi bi-arrow-left-circle-fill"></i>
+				</button>
+				<button class="carousel-control-next fs-1 text-dark" type="button" data-bs-target="#new-carousel" data-bs-slide="next">
+					<i class="bi bi-arrow-right-circle-fill"></i>
+				</button>
+				
+			</div><!-- new carousel end -->
+				
+		</div>
+	</div>
+</section>
+			
+		

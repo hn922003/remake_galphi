@@ -1,0 +1,94 @@
+<!-- 어떤 리스트인지 처리해준다 => 추후 -->
+<!-- 리스트: 베스트/추천/신간 -->
+<div class="container-fluid w-75 py-3">
+	<div class="container mt-3" style="font-family: 'Gowun Dodum', sans-serif;">
+		{{^bookList}}
+			<table class="table table-borderless">
+				<tr class="table-danger">
+					<td colspan="5"><marquee>검색 결과가 없습니다.</marquee></td>
+				</tr>
+			</table>
+		{{/bookList}}
+		{{#bookList}}
+			<table class="table-borderless ms-sm-5" style="margin: 10px;">
+				<tr class="position-relative">
+					<td>
+						<img alt="title" src="../images/{{ISBN}}.jpg" style="height: 300px;">
+					</td>
+					<td style="text-align: left;">
+						<h4>
+							<a
+								class="stretched-link"
+								href="../book/{{ISBN}}"
+								style="color: black; text-decoration: none; font-weight: bold; font-size: 32;">
+								&nbsp;&nbsp;&nbsp;&nbsp;{{{title}}} <!-- 댓글 수 -->
+							</a>
+						</h4>
+						&emsp;&nbsp;&nbsp;&nbsp;<span class="fw-bold">{{{author}}}</span><br/>
+						&emsp;&nbsp;&nbsp;&nbsp;<small class="fw-bold">{{{publisher}}}&nbsp;&nbsp;/&nbsp;&nbsp;{{pdate}}</small><br/>
+						{{#review}} <!-- 서평이 있으면 서평 출력 -->
+						<div class="container overflow-hidden m-4" style="height: 95px;">
+							{{{review}}}&nbsp;&nbsp;
+						</div>
+						{{/review}}
+						{{^review}} <!-- 서평이 없으면 줄거리 출력 -->
+						<div class="container overflow-hidden m-4" style="height: 95px;">
+							{{{summary}}}&nbsp;&nbsp;
+						</div>
+						{{/review}}
+						
+						<div class="mx-3 align-middle" style="width: 200px; height: 40px; 
+						background-image:  url('../images/avg.png'); 
+						background-repeat: no-repeat; 
+						background-size: cover;">
+							&emsp;&nbsp;&nbsp;&nbsp;<span class="fw-bold">이 책의 평점: {{avg}}</span>
+						</div><br/>
+					</td>
+				</tr>
+			</table>
+			<br/><hr style="color: #5AB2FF;"/><br/>
+		{{/bookList}}
+	</div>
+	<!-- 페이징 -->
+	<div class="container text-center align-middle">
+		<!-- 페이지 이동 버튼 -->
+		<ul class="pagination justify-content-center">
+			{{#p1}}
+			<li class="page-item"><a class="page-link" href="{{kind}}currentPage=1">First</a></li>
+			{{/p1}}
+			{{^p1}}
+			<li class="page-item disabled"><a class="page-link">First</a></li>
+			{{/p1}}
+			
+			{{#p2}}
+			<li class="page-item"><a class="page-link" href="{{kind}}currentPage={{.}}"><i class="bi bi-caret-left-fill"></i></a></li>
+			{{/p2}}
+			{{^p2}}
+			<li class="page-item disabled"><a class="page-link"><i class="bi bi-caret-left-fill"></i></a></li>
+			{{/p2}}
+			
+			{{#prevnum}}
+		    <li class="page-item"><a class="page-link" href="{{kind}}currentPage={{.}}">{{.}}</a></li>
+			{{/prevnum}}
+		    <li class="page-item disabled"><a class="page-link">{{currentPage}}</a></li>
+			{{#nextnum}}
+		    <li class="page-item"><a class="page-link" href="{{kind}}currentPage={{.}}">{{.}}</a></li>
+			{{/nextnum}}
+		    
+			{{#p4}}
+			<li class="page-item"><a class="page-link" href="{{kind}}currentPage={{.}}"><i class="bi bi-caret-right-fill"></i></a></li>
+			{{/p4}}
+			{{^p4}}
+			<li class="page-item disabled"><a class="page-link"><i class="bi bi-caret-right-fill"></i></a></li>
+			{{/p4}}
+			
+			{{#p5}}
+		    <li class="page-item"><a class="page-link" href="{{kind}}currentPage={{.}}">Last</a></li>
+			{{/p5}}
+			{{^p5}}
+		    <li class="page-item disabled"><a class="page-link">Last</a></li>
+			{{/p5}}
+		</ul>
+	</div>
+</div>
+

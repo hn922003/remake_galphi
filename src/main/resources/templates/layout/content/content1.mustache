@@ -1,0 +1,179 @@
+<!-- 북: 책 1권 상세페이지 + 댓글 -->
+<!-- 책 1권 부분 -->
+<div class="container-fluid w-75 py-3">
+	<div class="container mt-3" style="font-family: 'Gowun Dodum', sans-serif;">
+		{{^vo}}
+			<table class="table table-borderless">
+				<tr class="table-danger">
+					<td colspan="5"><marquee>책 정보가 없습니다.</marquee></td>
+				</tr>
+			</table>
+		{{/vo}}
+		{{#vo}}
+			<!-- Heading Row-->
+			<div class="row gx-4 gx-lg-1 my-5 align-items-center">
+			
+				<div class="col-lg-5">
+					<div class="container" style="text-align: left;">
+						<h2 class="fw-bold">{{title}}</h2><br/>
+						<span class="fw-bold m-2">{{author}}</span>|
+						<span class="fw-bold m-2">{{publisher}}</span>|
+						<span class="fw-bold m-2">출판일: {{pdate}}</span><br/>
+						<span class="fw-bold m-2">평점: {{avg}} {{{stars}}} </span>
+						<div class="fw-bold d-flex m-2">
+							{{{stamp}}}
+						</div><br/>
+						<hr style="color: #5AB2FF;"/>
+					</div>
+					<img class="mx-auto d-block" alt="title" src="/images/{{ISBN}}.jpg" style="height: 500px;">
+				</div>
+				
+				<div class="container p-3 col-lg-6 rounded-5 border border-5 border-primary-subtle">
+					<hr style="color: #5AB2FF;"/>
+					<p class="p-3">{{summary}}</p>
+					<hr style="color: #5AB2FF;"/>
+				</div>
+				
+			</div>
+			<hr style="color: #5AB2FF;"/><br/>
+			
+			<!-- Content Row-->
+			<div class="row gx-4 gx-lg-1" style="text-align: left;">
+				<div class="p-3 rounded-5 border border-5 border-primary-subtle">
+					<h2 class="card-title">목차</h2>
+					<hr style="color: #5AB2FF;"/>
+					<p class="card-text">{{chap}}</p>
+				</div>
+				<div class="my-5 p-3 rounded-5 border border-5 border-primary-subtle">
+					<h2 class="card-title">서평</h2>
+					<hr style="color: #5AB2FF;"/>
+					<div class="card-text">{{review}}</div>
+				</div>
+			</div>
+		{{/vo}}
+	</div>
+	
+	
+	
+
+	<div class="container mt-3" style="font-family: 'Gowun Dodum', sans-serif;">
+		<table class="table table-borderless p-5 rounded-5 border border-5 border-primary-subtle">
+			<tr class="py-5 align-middle text-center">
+				<td>
+					<figure class="text-center">
+					  <blockquote class="blockquote">
+					    <p class="fw-bold fs-3"><i class="bi bi-activity"></i> 먼저 읽어본 길라잡이들의 이야기 <i class="bi bi-activity"></i></p>
+					  </blockquote>
+					  <figcaption class="blockquote-footer">
+					    당신의 갈피를 잡아줄 <cite title="Source Title" class="fw-bold">속삭임</cite>
+					  </figcaption>
+					</figure>
+					<div class="text-danger mb-4 fs-5">
+						{{{stars}}}
+						&nbsp;<b>평점: {{vo.avg}}</b> 
+					</div>
+				</td>
+			</tr>
+			{{^commentList}}
+			<tr class="table-danger">
+				<td><marquee>댓글이 없습니다. 가장 먼저 댓글을 남겨보세요!!</marquee></td>
+			</tr>
+			{{/commentList}}
+			
+			<!-- 댓글이 있으면 출력하는 부분 -->
+			{{#commentList}}
+			<tr class="px-3">
+				<td class="text-start overflow-hidden p-3" style="width:700px;">
+					<div class="d-inline p-3 align-middle">
+						<b>{{nick}}</b> 
+						<small class="ml-3">
+							{{wdate}}
+						</small>
+						<!-- 후기 수정 js로 페이지 이동없이 댓글 작성란에 데이터 꽂기 -->
+						{{#flag}}
+						<button
+							class="btn btn-sm text-primary"
+							type="button"
+							style="font-size: 12px; margin-right: -12px;"
+							title="후기수정"
+							onclick="location.href='update?'">
+							<i class="bi bi-wrench-adjustable"></i>
+						</button>
+						<form action="/delete" method="post">
+							<button
+								class="btn btn-sm text-danger"
+								type="submit"
+								style="font-size: 12px;"
+								title="후기삭제">
+								<i class="bi bi-x-circle-fill"></i>
+							</button>	
+							<input type="hidden" name="ISBN" value="{{ISBN}}">
+							<input type="hidden" name="idx" value="{{idx}}">
+							<input type="hidden" name="score" value="{{score}}">
+						</form>
+						{{/flag}}
+					</div>
+					<div class="d-inline-flex float-end" style="color: red;">
+						<!-- 평점 만큼 별의 개수를 적어준다 온별 반별 -->
+						{{score}}&nbsp;&nbsp;
+						<small class="text-black-50"><span>&nbsp; / &nbsp;</span></small>
+						
+					</div>
+					<br/>
+					<div class="p-3 pt-3 pb-3">
+						{{memo}}
+					</div>
+					<hr style="color: #5AB2FF;">
+				</td>
+			</tr>
+			{{/commentList}}
+			
+			<!-- ============================로그인 댓글기능================================== -->
+			
+			{{^nickname}} <!-- 비로그인 상태에서만 보인다.=> js로 구현 -->
+			<tr class="table-primary align-middle text-center" style="font-size: 30px;">
+				<td>
+					<a class="text-decoration-none fw-bold p-5" href="/loginpage">
+						로그인 하시고 나만의 책갈피를 남겨보세요!
+					</a> 
+				</td>
+			</tr>
+			{{/nickname}}
+		</table>
+		
+		{{#nickname}} <!-- 로그인 상태에서만 보인다. -->
+		<form action="/book/{{vo.ISBN}}/new" method="post">
+			<div class="container border border-5 border-primary-subtle p-3 my-2" style="width: 700px; margin-left: auto; margin-right: auto;">
+				<h2 class="fw-bold mb-3 text-center">책갈피 남기기</h2>
+				<label for="score">별점</label>
+				<input 
+					id="score" 
+					class="form-control form-control-sm" 
+					type="number"
+					placeholder="0 ~ 10점을 입력해주세요" 
+					name="score"
+					min="0" max="10" step="1" required="required"/>
+				<label for="memo">후기</label>
+				<textarea 
+					id="memo" 
+					class="form-control form-control-sm" 
+					rows="10" 
+					name="memo"
+					placeholder="당신의 소중한 경험을 이야기해주세요."
+					style="resize: none;" 
+					required="required"></textarea>
+				<div class="text-center">
+					<button
+						class="btn btn-primary btn-sm mt-3"
+						type="submit"
+						name="commentBtn">
+						<i class="bi bi-pencil"></i>&nbsp;후기쓰기
+					</button>
+				</div>
+			</div>
+			<input type="hidden" name="nick" value="{{nickname}}">
+		</form>
+		{{/nickname}}
+		
+	</div>
+</div>

@@ -1,0 +1,83 @@
+<!-- 장르별 슬라이더 섹션 -->
+<section id="genre-slider-container" class="container-fluid py-5 bg-secondary-subtle" style="font-family: 'Nanum Myeongjo', serif;">
+	<div id="best-wrapper" class="container-fluid w-75"  style="height: 400px;">
+		<span class="fw-bold">장르별 책 둘러보기</span>
+		<h2 class="fw-bold">테마별</h2>
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs fw-bold py-3">
+			<li class="nav-item">
+			    <a class="nav-link active" data-bs-toggle="tab" href="#menu1">요즘 뜨는 소설</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" data-bs-toggle="tab" href="#menu2">인공지능 시대</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" data-bs-toggle="tab" href="#menu3">어린이 세상</a>
+			</li>
+		</ul>
+		
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="container tab-pane active" id="menu1">
+				<div class="container">
+					<div class="container-fluid d-flex mt-3">
+						{{#themeList1}}
+						<div class="container d-flex position-relative">
+							<a class="stretched-link" href="book/{{ISBN}}">
+						    	<img src="./images/{{ISBN}}.jpg" alt="테마1" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+							</a>
+							<div class="p-3 align-middle overflow-hidden" style="font-family: 'Nanum Myeongjo'; height:210px;">
+								<span class="fw-bold">{{title}}</span><br/>
+								<span class="small fw-bold">{{author}}</span><br/>
+								<span class="small fw-bold">{{review}}</span><br/>
+							</div>
+						</div>
+						{{/themeList1}}
+					</div>
+				</div>
+			</div><!-- tab-pane end -->
+			
+			<!-- 탭2 -->
+			<div class="tab-pane container fade" id="menu2">
+				<div class="container">
+					<div class="container-fluid d-flex mt-3">
+						{{#themeList2}}
+						<div class="container d-flex position-relative">
+							<a class="stretched-link" href="book/{{ISBN}}">
+						    	<img src="./images/{{ISBN}}.jpg" alt="테마2" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+							</a>
+							<div class="p-3 align-middle overflow-hidden" style="font-family: 'Nanum Myeongjo'; height:210px;">
+								<span class="fw-bold">{{title}}</span><br/>
+								<span class="small fw-bold">{{author}}</span><br/>
+								<span class="small fw-bold">{{review}}</span><br/>
+							</div>
+						</div>
+						{{/themeList2}}
+					</div>
+				</div>
+			</div>
+			
+			<!-- 탭3 -->
+			<div class="tab-pane container fade" id="menu3">
+				<div class="container">
+					<div class="container-fluid d-flex mt-3">
+						{{#themeList3}}
+						<div class="container d-flex position-relative">
+							<a class="stretched-link" href="book/{{ISBN}}">
+						    	<img src="./images/{{ISBN}}.jpg" alt="테마3" class="d-block mx-3" style="height:200px; ojbect-fit:cover;">
+							</a>
+							<div class="p-3 align-middle overflow-hidden" style="font-family: 'Nanum Myeongjo'; height:210px;">
+								<span class="fw-bold">{{title}}</span><br/>
+								<span class="small fw-bold">{{author}}</span><br/>
+								<span class="small fw-bold">{{review}}</span><br/>
+							</div>
+						</div>
+						{{/themeList3}}
+					</div>
+				</div>
+			</div>
+			
+		</div><!-- tab-content end -->
+		
+	</div>
+</section>

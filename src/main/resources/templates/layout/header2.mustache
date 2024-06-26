@@ -1,0 +1,128 @@
+<!-- 헤더 컨테이너 -->
+<div id="header-wrapper" class="container-fluid w-75">
+	<!-- 헤더 -->
+	<header id="header" class="container-fluid text-center">
+		
+		<!-- 상단 스티치 추후 구현 --> 
+		
+		<!-- 헤더 1단 로고/검색/로그인 -->
+		<div class="container-fluid d-flex text-center">
+			<!-- 로고 -->
+			<div id="logo-container" class="container-fluid w-25">
+				<a href="/">
+					<img alt="로고" src="/images/logo.png" title="갈피" style="width: 200px;">
+				</a>
+			</div>
+			<!-- 검색 폼 -->
+			<!-- 검색유형과 검색어 반환 추후수정 -->
+			<div id="search-container" class="container-fluid w-50 py-5">
+				<br/>
+				<form class="form-control form-control-sm d-flex rounded-pill overflow-hidden" action="/search"
+					method="get" name="search-requirement"
+					style="font-family: 'Gowun Dodum', sans-serif; border-color: #5AB2FF;">
+					<!-- 검색유형 반환 -->
+					<select class="mr-2 text-center rounded-3 fw-bold border-0" name="type" >
+						<option {{#type}}selected="selected"{{/type}}>제목</option>
+						<option {{#type2}}selected="selected"{{/type2}}>저자</option>
+						<option {{#type3}}selected="selected"{{/type3}}>출판사</option>
+					</select>&nbsp; 
+					<!-- 검색어 반환 -->
+					<input type="text" class="form-control form-control-sm border-0" placeholder="&nbsp;검색어를 입력하세요" name="word" {{#word}}value="{{word}}"{{/word}}> 
+					<button class="btn border-0" type="submit">
+						<i class="bi bi-search fs-4" style="color: #5AB2AA;"></i>
+					</button>
+				</form>
+			</div>
+			<!-- 로그인/회원가입 폼 -->
+			<div id="login-container" class="container-fluid w-25 py-5" style="font-family: 'Gowun Dodum', sans-serif;">
+				<div>
+				{{^nickname}}
+					<div class="container w-50 position-relative">
+						<button class="btn btn-lg btn-primary text-white rounded-circle border-0 align-middle stretched-link" type="submit"
+							id="login_button" onclick="location.href='/loginpage'" style="background-color: #5AB2FF; width: 60px; height: 60px;"> 
+							<i class="bi bi-person fs-3"></i><br/>
+						</button>
+						<p class="fw-bold pt-2 small">로그인 / 회원가입</p>
+					</div>
+				{{/nickname}}
+				
+				{{#nickname}}
+					<button class="btn btn-sm text-black pt-4"> 
+						<b>{{nickname}}</b>님 로그인 되었습니다
+					</button>
+					<button class="btn btn-sm text-black-50 pt-4" type="button"
+						id="login_button" onclick="location.href='/logout'"> 로그아웃
+					</button>
+				{{/nickname}}
+				</div>
+			</div>
+		</div>
+		
+		<!-- 헤더 2단 -->
+		<div class="container-fluid d-flex text-center">
+			<!-- 카테고리 가로 네비게이션 바로 변경 -->
+			<div id="nav-container" class="mx-5 justify-content-start">
+				<ul class="list-group border-0 list-group-horizontal fw-bold fs-5">
+					<li class="list-group-item border-0 nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+							<i class="bi bi-list text-black"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="../list/best">베스트</a></li>
+							<li><a class="dropdown-item" href="../list/daily">추천</a></li>
+							<li><a class="dropdown-item" href="../list/new">신간</a></li>
+							<li><a class="dropdown-item" href="../list/novel">소설</a></li>
+							<li><a class="dropdown-item" href="../list/develop">자기계발</a></li>
+							<li><a class="dropdown-item" href="../list/it">IT/컴퓨터</a></li>
+							<li><a class="dropdown-item" href="../list/history">역사</a></li>
+							<li><a class="dropdown-item" href="../list/new">아동</a></li>
+						</ul>
+				    </li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/best">
+							<span>베스트</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/daily">
+							<span>추천</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/new">
+							<span>신간</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/novel">
+							<span>소설</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/develop">
+							<span>자기계발</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/it">
+							<span>IT/컴퓨터</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/child">
+							<span>아동</span>
+						</a>
+					</li>
+					<li class="list-group-item border-0" style="font-family: 'Nanum Myeongjo', serif;">
+						<a class="text-decoration-none text-black" href="../list/history">
+							<span>역사</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+</div>
+
+<!-- 메인 -->
+<main id="main" class="container-fluid px-0">

@@ -1,0 +1,659 @@
+<!-- 베스트 도서 슬라이더 섹션 탭 -->
+<section id="best-slider-container" class="container-fluid py-5" style="font-family: 'Nanum Myeongjo', serif; background-color: #CAF4FF;">
+	<div id="best-wrapper" class="container-fluid">
+		<div class="container w-75">
+			<span class="fw-bold">내가 제일 잘 나가!</span>
+			<h2 class="fw-bold">Best 베스트</h2>
+		</div>
+		
+		<!-- best carousel -->
+		<div id="best-carousel" class="carousel slide" data-bs-ride="carousel">
+			<!-- 베스트 탭 -->
+			<div class="carousel-inner container w-75" id="home" style="height: 400px;">
+				<div class="carousel-item active">
+					<div class="d-flex"><!-- 1위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best1.ISBN}}">
+									<img src="./images/{{best1.ISBN}}.jpg" alt="1위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">1위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best1.title}}</span><br/>
+								<span class="small fw-bold">{{best1.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best1.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div class="container">
+								<a href="book/{{best2.ISBN}}">
+									<img src="./images/{{best2.ISBN}}.jpg" alt="2위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">2위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best2.title}}</span><br/>
+									<span class="small fw-bold">{{best2.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best3.ISBN}}">
+						    		<img src="./images/{{best3.ISBN}}.jpg" alt="3위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">3위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best3.title}}</span><br/>
+									<span class="small fw-bold">{{best3.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best4.ISBN}}">
+							    	<img src="./images/{{best4.ISBN}}.jpg" alt="4위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">4위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best4.title}}</span><br/>
+									<span class="small fw-bold">{{best4.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best5.ISBN}}">
+							    	<img src="./images/{{best5.ISBN}}.jpg" alt="5위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">5위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best5.title}}</span><br/>
+									<span class="small fw-bold">{{best5.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 2위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best2.ISBN}}">
+									<img src="./images/{{best2.ISBN}}.jpg" alt="2위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">2위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best2.title}}</span><br/>
+								<span class="small fw-bold">{{best2.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best2.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best3.ISBN}}">
+						    		<img src="./images/{{best3.ISBN}}.jpg" alt="3위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">3위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best3.title}}</span><br/>
+									<span class="small fw-bold">{{best3.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best4.ISBN}}">
+							    	<img src="./images/{{best4.ISBN}}.jpg" alt="4위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">4위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best4.title}}</span><br/>
+									<span class="small fw-bold">{{best4.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best5.ISBN}}">
+							    	<img src="./images/{{best5.ISBN}}.jpg" alt="5위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">5위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best5.title}}</span><br/>
+									<span class="small fw-bold">{{best5.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best6.ISBN}}">
+									<img src="./images/{{best6.ISBN}}.jpg" alt="6위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">6위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best6.title}}</span><br/>
+									<span class="small fw-bold">{{best6.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 3위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best3.ISBN}}">
+									<img src="./images/{{best3.ISBN}}.jpg" alt="3위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">3위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best3.title}}</span><br/>
+								<span class="small fw-bold">{{best3.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best3.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best4.ISBN}}">
+							    	<img src="./images/{{best4.ISBN}}.jpg" alt="4위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">4위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best4.title}}</span><br/>
+									<span class="small fw-bold">{{best4.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best5.ISBN}}">
+							    	<img src="./images/{{best5.ISBN}}.jpg" alt="5위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">5위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best5.title}}</span><br/>
+									<span class="small fw-bold">{{best5.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best6.ISBN}}">
+									<img src="./images/{{best6.ISBN}}.jpg" alt="6위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">6위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best6.title}}</span><br/>
+									<span class="small fw-bold">{{best6.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best7.ISBN}}">
+						    		<img src="./images/{{best7.ISBN}}.jpg" alt="7위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">7위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best7.title}}</span><br/>
+									<span class="small fw-bold">{{best7.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 4위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best4.ISBN}}">
+									<img src="./images/{{best4.ISBN}}.jpg" alt="4위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">4위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best4.title}}</span><br/>
+								<span class="small fw-bold">{{best4.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best4.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best5.ISBN}}">
+							    	<img src="./images/{{best5.ISBN}}.jpg" alt="5위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">5위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best5.title}}</span><br/>
+									<span class="small fw-bold">{{best5.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best6.ISBN}}">
+									<img src="./images/{{best6.ISBN}}.jpg" alt="6위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">6위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best6.title}}</span><br/>
+									<span class="small fw-bold">{{best6.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best7.ISBN}}">
+						    		<img src="./images/{{best7.ISBN}}.jpg" alt="7위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">7위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best7.title}}</span><br/>
+									<span class="small fw-bold">{{best7.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best8.ISBN}}">
+							    	<img src="./images/{{best8.ISBN}}.jpg" alt="8위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">8위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best8.title}}</span><br/>
+									<span class="small fw-bold">{{best8.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 5위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best5.ISBN}}">
+									<img src="./images/{{best5.ISBN}}.jpg" alt="5위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">5위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best5.title}}</span><br/>
+								<span class="small fw-bold">{{best5.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best5.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div class="container">
+								<a href="book/{{best6.ISBN}}">
+									<img src="./images/{{best6.ISBN}}.jpg" alt="6위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">6위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best6.title}}</span><br/>
+									<span class="small fw-bold">{{best6.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best7.ISBN}}">
+						    		<img src="./images/{{best7.ISBN}}.jpg" alt="7위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">7위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best7.title}}</span><br/>
+									<span class="small fw-bold">{{best7.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best8.ISBN}}">
+							    	<img src="./images/{{best8.ISBN}}.jpg" alt="8위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">8위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best8.title}}</span><br/>
+									<span class="small fw-bold">{{best8.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best9.ISBN}}">
+							    	<img src="./images/{{best9.ISBN}}.jpg" alt="9위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">9위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best9.title}}</span><br/>
+									<span class="small fw-bold">{{best9.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 6위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best6.ISBN}}">
+									<img src="./images/{{best6.ISBN}}.jpg" alt="6위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">6위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best6.title}}</span><br/>
+								<span class="small fw-bold">{{best6.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best6.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best7.ISBN}}">
+						    		<img src="./images/{{best7.ISBN}}.jpg" alt="7위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">7위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best7.title}}</span><br/>
+									<span class="small fw-bold">{{best7.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best8.ISBN}}">
+							    	<img src="./images/{{best8.ISBN}}.jpg" alt="8위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">8위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best8.title}}</span><br/>
+									<span class="small fw-bold">{{best8.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best9.ISBN}}">
+							    	<img src="./images/{{best9.ISBN}}.jpg" alt="9위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">9위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best9.title}}</span><br/>
+									<span class="small fw-bold">{{best9.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best10.ISBN}}">
+									<img src="./images/{{best10.ISBN}}.jpg" alt="10위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">10위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best10.title}}</span><br/>
+									<span class="small fw-bold">{{best10.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 8위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best8.ISBN}}">
+									<img src="./images/{{best8.ISBN}}.jpg" alt="8위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">8위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best8.title}}</span><br/>
+								<span class="small fw-bold">{{best8.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best8.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best9.ISBN}}">
+							    	<img src="./images/{{best9.ISBN}}.jpg" alt="9위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">9위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best9.title}}</span><br/>
+									<span class="small fw-bold">{{best9.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best10.ISBN}}">
+									<img src="./images/{{best10.ISBN}}.jpg" alt="10위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">10위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best10.title}}</span><br/>
+									<span class="small fw-bold">{{best10.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best1.ISBN}}">
+						    		<img src="./images/{{best1.ISBN}}.jpg" alt="1위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">1위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best1.title}}</span><br/>
+									<span class="small fw-bold">{{best1.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best2.ISBN}}">
+							    	<img src="./images/{{best2.ISBN}}.jpg" alt="2위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">2위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best2.title}}</span><br/>
+									<span class="small fw-bold">{{best2.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 9위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best9.ISBN}}">
+									<img src="./images/{{best9.ISBN}}.jpg" alt="9위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">9위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best9.title}}</span><br/>
+								<span class="small fw-bold">{{best9.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best9.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div class="container">
+								<a href="book/{{best10.ISBN}}">
+									<img src="./images/{{best10.ISBN}}.jpg" alt="10위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">10위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best10.title}}</span><br/>
+									<span class="small fw-bold">{{best10.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best1.ISBN}}">
+						    		<img src="./images/{{best1.ISBN}}.jpg" alt="1위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">1위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best1.title}}</span><br/>
+									<span class="small fw-bold">{{best1.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best2.ISBN}}">
+							    	<img src="./images/{{best2.ISBN}}.jpg" alt="2위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">2위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best2.title}}</span><br/>
+									<span class="small fw-bold">{{best2.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best3.ISBN}}">
+							    	<img src="./images/{{best3.ISBN}}.jpg" alt="3위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">3위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best3.title}}</span><br/>
+									<span class="small fw-bold">{{best3.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item">
+					<div class="d-flex"><!-- 10위 -->
+						<div class="w-50 d-flex">
+							<div class="w-50">
+								<a href="book/{{best10.ISBN}}">
+									<img src="./images/{{best10.ISBN}}.jpg" alt="10위" class="d-block" style="height:300px; ojbect-fit:cover;">
+								</a>
+							</div>
+							<div class="w-50 align-middle" style="font-family: 'Nanum Myeongjo';">
+								<kbd class="fw-bold fs-3">
+									<span style="font-family: 'Nanum Myeongjo';">10위</span>
+								</kbd><br/><br/><br/>
+								<span class="fs-3 fw-bold text-wrap">{{best10.title}}</span><br/>
+								<span class="small fw-bold">{{best10.author}}</span><br/>
+								<span class="small fw-bold">평점: {{best10.avg}}</span>
+							</div>
+						</div>
+						<div class="w-50 d-flex">
+							<div>
+						    	<a href="book/{{best1.ISBN}}">
+						    		<img src="./images/{{best1.ISBN}}.jpg" alt="1위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">1위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best1.title}}</span><br/>
+									<span class="small fw-bold">{{best1.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best2.ISBN}}">
+							    	<img src="./images/{{best2.ISBN}}.jpg" alt="2위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">2위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best2.title}}</span><br/>
+									<span class="small fw-bold">{{best2.author}}</span><br/>
+								</div>
+							</div>
+							<div>
+						    	<a href="book/{{best3.ISBN}}">
+							    	<img src="./images/{{best3.ISBN}}.jpg" alt="3위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+						    	</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">3위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best3.title}}</span><br/>
+									<span class="small fw-bold">{{best3.author}}</span><br/>
+								</div>
+							</div>
+							<div class="container">
+								<a href="book/{{best4.ISBN}}">
+									<img src="./images/{{best4.ISBN}}.jpg" alt="4위" class="d-block mx-3" style="height:180px; ojbect-fit:cover;">
+								</a>
+								<div class="p-3 align-middle" style="font-family: 'Nanum Myeongjo';">
+									<kbd class="fw-bold">
+										<span style="font-family: 'Nanum Myeongjo';">4위</span>
+									</kbd><br/>
+									<span class="fw-bold text-wrap">{{best4.title}}</span><br/>
+									<span class="small fw-bold">{{best4.author}}</span><br/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div><!-- 캐러셀 아이템스 끝 -->
+			
+			<!-- 좌우 이동버튼 -->
+			<button class="carousel-control-prev fs-1 text-dark" type="button" data-bs-target="#best-carousel" data-bs-slide="prev">
+				<i class="bi bi-arrow-left-circle-fill"></i>
+			</button>
+			<button class="carousel-control-next fs-1 text-dark" type="button" data-bs-target="#best-carousel" data-bs-slide="next">
+				<i class="bi bi-arrow-right-circle-fill"></i>
+			</button>
+		</div><!-- best carousel end -->
+		
+	</div>
+</section>
+			

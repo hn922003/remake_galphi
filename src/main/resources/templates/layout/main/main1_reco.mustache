@@ -1,0 +1,61 @@
+<!-- 추천 사이트니깐 추천박스 두개 당신의 책갈피!!!!! Galphi's Pick 추천 탭 -->
+<div id="galphi-recommend-wrapper" class="container-fluid w-75 mt-5" style="font-family: 'Nanum Myeongjo', serif;">
+	<div class="container-fluid d-flex">
+	
+		<!-- 왼쪽 추천 -->
+		<div class="w-50 mx-3 position-relative">
+			<div id="galphi-left" class="d-flex container-fluid rounded-5 p-3" style="background-image: url('./images/reco.png'); background-size: cover;">
+				<a class="stretched-link" href="book/72">
+					<img src="./images/72.jpg" alt="추천1" class="d-block rounded-5 border border-5 border-danger-subtle" style="height:400px; ojbect-fit:cover;">
+				</a>
+				<!-- 댓글 리스트~ -->
+				<div class="overflow-hidden fw-bold mx-3" style="height: 400px;">
+					<ul class="list-group list-group-flush">
+						{{#comments1}}
+						<li class="m-1 list-group-item rounded-5 bg-success-subtle border border-5 border-danger-subtle" style="color: DarkRed;">{{memo}}</li>
+						{{/comments1}}
+					</ul>
+				</div>
+			</div>
+			<div class="container-fluid rounded-5 m-3">
+				<i class="bi bi-stars fs-3 text-warning"></i>
+				<kbd>
+					<span class="fw-bold small">추천</span>
+				</kbd>
+				<p class="fw-bold h2 mt-3">
+					역사가의 눈으로 본 죽음!
+				</p><br/>
+				<span class="blockquote-footer small fw-bold">죽음에서 비롯된 고대에서 현대까지 인류의 변화</span>
+			</div>
+		</div>
+		<!-- 오른쪽 추천 -->
+		<div class="w-50 mx-3 position-relative">
+			<div id="galphi-right" class="d-flex container-fluid rounded-5 p-3 bg-warning-subtle" style="background-image: url('./images/reco2.png'); background-size: cover;">
+				<a class="stretched-link" href="book/73">
+					<img src="./images/73.jpg" alt="추천2" class="d-block rounded-5 border border-5 border-primary-subtle" style="height:400px; ojbect-fit:cover;">
+				</a>
+				<!-- 댓글 리스트~ -->
+				<div class="overflow-hidden fw-bold mx-3" style="height: 400px;">
+					<ul class="list-group list-group-flush">
+						{{#comments2}}
+						<li class="m-1 list-group-item rounded-5 bg-warning-subtle border border-5 border-primary-subtle" style="color: Teal;">{{memo}}</li>
+						{{/comments2}}
+					</ul>
+				</div>
+				
+			</div>
+			<div class="container-fluid rounded-5 m-3">
+				<i class="bi bi-balloon-heart-fill fs-3 text-danger"></i>
+				<kbd>
+					<span class="fw-bold small">추천</span>
+				</kbd>
+				<p class="fw-bold h2 mt-3">
+					우리는 언제부터 외식을 했을까?
+				</p><br/>
+				<span class="blockquote-footer small fw-bold">미식가가 전해주는 레스토랑 이야기</span>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<hr class="w-75 mx-auto my-5"/>
