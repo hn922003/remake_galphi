@@ -1,7 +1,7 @@
 # 리메이크 갈피(REMAKE Galphi) - 도서 추천 사이트 with SPRINGBOOT
 ![playppt](https://github.com/hn922003/remake_galphi/assets/160821626/e902d0b4-0a41-4b9e-bb0a-d6df7d9dd0a6)
 
-## 상세내용 이미지로 보기
+## 리메이크 갈피 프로젝트 PPT 
 ![그림](https://github.com/hn922003/remake_galphi/blob/master/screentshots/ppt/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C1.PNG)
 ![그림](https://github.com/hn922003/remake_galphi/blob/master/screentshots/ppt/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C2.PNG)
 ![그림](https://github.com/hn922003/remake_galphi/blob/master/screentshots/ppt/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C3.PNG)
