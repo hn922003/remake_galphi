@@ -91,15 +91,15 @@
 						</small>
 						<!-- 후기 수정 js로 페이지 이동없이 댓글 작성란에 데이터 꽂기 -->
 						{{#flag}}
-						<button
-							class="btn btn-sm text-primary"
-							type="button"
-							style="font-size: 12px; margin-right: -12px;"
-							title="후기수정"
-							onclick="location.href='update?'">
-							<i class="bi bi-wrench-adjustable"></i>
-						</button>
-						<form action="/delete" method="post">
+						<form action="/delete" method="post" class="d-inline">
+							<button
+								class="btn btn-sm text-primary"
+								type="button"
+								style="font-size: 12px; margin-right: -12px;"
+								title="후기수정"
+								onclick="location.href='update?'">
+								<i class="bi bi-wrench-adjustable"></i>
+							</button>
 							<button
 								class="btn btn-sm text-danger"
 								type="submit"
