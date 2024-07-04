@@ -331,7 +331,18 @@ public class Controller {
 	@PostMapping("/comment/edit")
 	public String updateComment(HttpServletRequest request, Model model, BookCommentVO bookCommentVO) {
 		System.out.println("Controller 클래스의 updateComment() 메소드 실행");
-		// 저장할 정보를 서비스 클래스로 넘겨준다.
+		System.out.println(bookCommentVO.getISBN() + "<===책번호========댓글점수===>" + bookCommentVO.getScore());
+		// 데이터 유효성을 확인한다.
+		String mess = "";
+		// 댓글이 공백만 있는지 확인한다.(누락값 등은 뷰페이지에서 검사완료)
+		if (bookCommentVO.getMemo().trim().equals("")) { // 공백만 있다면
+			System.out.println("메모가 공백만 있습니다. <" + bookCommentVO.getMemo().trim() + "> 사이가 비었습니다.");
+			mess = "메모에 공백만 존재합니다. 내용을 입력하세요.";
+			model.addAttribute("mess", mess);
+			return selectByISBN(bookCommentVO.getISBN(), request, model);
+		}
+		
+		// 수정할 정보를 서비스 클래스로 넘겨준다.
 		bookService.updateComment(bookCommentVO);
 		return "redirect:/book/" + bookCommentVO.getISBN();
 	}

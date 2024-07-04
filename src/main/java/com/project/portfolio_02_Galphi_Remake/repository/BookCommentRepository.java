@@ -16,5 +16,7 @@ public interface BookCommentRepository  extends JpaRepository<Bookcomment, Integ
 	// Idx에 해당하는 댓글 1건의 별점을 얻어오는 메소드
 	float findScoreByIdx(int idx);
 
+	Bookcomment findByIdx(int idx);
+
 
 }

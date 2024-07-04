@@ -331,34 +331,24 @@ public class BookService {
 	// 댓글 1건의 내용과 평점을 수정하는 메소드
 	public void updateComment(BookCommentVO bookCommentVO) {
 		System.out.println("서비스 클래스의 updateComment() 실행");
-		try { //별점을 정수로 입력했는지 확인한다.
-			bookCommentVO.setScore((int) bookCommentVO.getScore()); 
-			// 입력하지 않은 정보가 있는지 확인한다.
-			if (bookCommentVO.getMemo() != null) {
-				throw new IllegalArgumentException("댓글 내용을 입력하세요.");
-			}
-			if (bookCommentVO.getScore() > 10 || bookCommentVO.getScore() < 0) {
-				throw new IllegalArgumentException("별점을 0 ~ 10 사이로 입력해 주세요.");
-			}
 			
-			// vo객체를 엔티티로 변환해서 수정된 정보를 저장한다.
-			bookCommentRepository.save(Bookcomment.voToEntity(bookCommentVO));
-			
-			// 댓글이 저장된 책의 평점을 수정한다.
-			BookVO vo = selectByISBN(bookCommentVO.getISBN());
-			// 오리지널 별점을 가져온다.
-			float original = bookCommentRepository.findScoreByIdx(bookCommentVO.getIdx());
-			int size = bookCommentRepository.countByISBN(bookCommentVO.getISBN());
-			float score = bookCommentVO.getScore();
-			// 책의 평점 => (책의평점 * 댓글수 + 입력점수 - 오리지날점수) / (댓글수)
-			vo.setAvg((vo.getAvg() * size + score - original) / size);
-			// 엔티티로 변환해서 저장한다.
-			bookRepository.save(Book.voToEntity(vo));
-			
-		} catch (Exception e) {
-			throw new IllegalArgumentException("별점을 0 ~ 10 사이의 정수로 입력하세요.");
-		}
+		// 댓글 1건을 불러와서 별점과 메모를 수정한다.
+		Bookcomment bookcomment = bookCommentRepository.findByIdx(bookCommentVO.getIdx());
+		BookCommentVO originCo = BookCommentVO.entityToVO(bookcomment);
+		originCo.setScore(bookCommentVO.getScore());
+		originCo.setMemo(bookCommentVO.getMemo());
+		bookCommentRepository.save(Bookcomment.voToEntity(originCo));
 		
+		// 댓글이 저장된 책의 평점을 수정한다.
+		BookVO vo = selectByISBN(bookCommentVO.getISBN());
+		// 오리지널 별점을 가져온다.
+		float original = bookCommentRepository.findScoreByIdx(bookCommentVO.getIdx());
+		int size = bookCommentRepository.countByISBN(bookCommentVO.getISBN());
+		float score = bookCommentVO.getScore();
+		// 책의 평점 => (책의평점 * 댓글수 + 입력점수 - 오리지날점수) / (댓글수)
+		vo.setAvg((vo.getAvg() * size + score - original) / size);
+		// 엔티티로 변환해서 저장한다.
+		bookRepository.save(Book.voToEntity(vo));
 	}
 	
 	@Transactional
