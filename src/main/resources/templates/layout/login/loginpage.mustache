@@ -24,9 +24,9 @@
 				<img alt="로고" src="../images/loginlogo.png" title="갈피" style="width: 100px;">
 			</a>
 			<span>지금 가입하고 당신의 책갈피를 남기세요.</span>
-			<input name="username" type="text" placeholder="당신의 이름을 입력하세요" />
-			<input name="nick" type="text" placeholder="사용할 닉네임을 입력하세요" />
-			<input name="id" type="text" placeholder="사용할 아이디를 입력하세요" />
+			<input id="joinname" name="username" type="text" placeholder="당신의 이름을 입력하세요" />
+			<input id="joinnick" name="nick" type="text" placeholder="사용할 닉네임을 입력하세요" />
+			<input id="joinid" name="id" type="text" placeholder="사용할 아이디를 입력하세요" onkeyup="chkCharCode(event)" />
 			<input name="pw" type="password" placeholder="사용할 비밀번호를 입력하세요" />
 			{{#check}}<!-- 회원가입 누락 메세지 -->
 			<div class="alert alert-danger" role="alert">
@@ -44,7 +44,7 @@
 				<img alt="로고" src="../images/loginlogo.png" title="갈피" style="width: 200px;">
 			</a>
 			<span>갈피 계정으로 로그인하세요.</span>
-			<input name="id" type="text" placeholder="아이디를 입력해 주세요." />
+			<input id="loginid" name="id" type="text" placeholder="아이디를 입력해 주세요." />
 			<input name="pw" type="password" placeholder="비밀번호를 입력해 주세요." />
 			{{#result}}<!-- 로그인 실패 메세지 -->
 			<div class="alert alert-danger" role="alert">
